@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">TestTask</string>
+
+
+    <string-array name="array_name">
+        <item>Анастасия М.</item>
+        <item>Олег Вульф</item>
+        <item>Мама</item>
+        <item>Брат</item>
+        <item>Сосед</item>
+        <item>Ремонт Холодильников</item>
+        <item>Одноклассник</item>
+        <item>Авто</item>
+        <item>Мастер</item>
+        <item>Макс</item>
+    </string-array>
+
+    <string-array name="array_url_icon">
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx1qtutkE5iDvWk-8uWLAnGGXmw69r3xLfZQKaNdttnK80Ia8K</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjcHiGu7ZXoGVPjMWSylOFB_rxJD8vbttM-HtCvHYvtpKoRUC-Q</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6qgKbiRdQ7S_-aryW1DAG8s-h_WVSdEL9WmQX-fxDIeSW8xE6</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsfZwBEeJsMhAVq4sQRr_33XsOx8qShqAvaWLYVJzKxvJa5m2yQ</item>
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyE294JmZeFTi99vy2n3JbMq-_KpRFDmP6iT1DifuAGsU5YT3t</item>
+    </string-array>
+
+    <string-array name="array_message">
+        <item>Привет, как дела? бла бла бла бла бла бла бла </item>
+        <item>Сегодня поеду домой</item>
+        <item>Как твоё настроение?</item>
+        <item>Крибли крабли бум</item>
+        <item>Я не приду</item>
+    </string-array>
+
+    <string-array name="array_date">
+        <item>Thu</item>
+        <item>21.03.2017</item>
+        <item>Today</item>
+        <item>Sun</item>
+        <item>22.05.2017</item>
+    </string-array>
 </resources>

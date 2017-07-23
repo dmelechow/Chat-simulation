@@ -18,7 +18,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dmelechow.testtask.event.UpdateChatEvent;
-import dmelechow.testtask.injection.ChatAdapterModule;
+import dmelechow.testtask.injection.ChatGeneratorInteractorModule;
 import dmelechow.testtask.injection.ChatPresenterModule;
 import dmelechow.testtask.injection.DaggerChatComponent;
 import dmelechow.testtask.model.Chat;
@@ -79,7 +79,7 @@ public class ChatActivity extends AppCompatActivity implements ChatRenderView {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         DaggerChatComponent.builder()
-                .chatAdapterModule(new ChatAdapterModule(this))
+                .chatGeneratorInteractorModule(new ChatGeneratorInteractorModule(this))
                 .chatPresenterModule(new ChatPresenterModule(this))
                 .build()
                 .inject(this);

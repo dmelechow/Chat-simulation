@@ -14,19 +14,13 @@ import dmelechow.testtask.view.adapter.ChatAdapter;
 @Module
 public class ChatAdapterModule {
 
-    private Context context;
-
-    public ChatAdapterModule(Context context) {
-        this.context = context;
-    }
-
     @Provides
-    ChatAdapter provideAdapter() {
+    ChatAdapter provideAdapter(Context context) {
         return new ChatAdapter(context);
     }
 
     @Provides
-    LinearLayoutManager provideManager() {
+    LinearLayoutManager provideManager(Context context) {
         return new LinearLayoutManager(context);
     }
 }

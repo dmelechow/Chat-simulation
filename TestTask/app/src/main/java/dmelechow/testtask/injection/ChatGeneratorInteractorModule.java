@@ -1,5 +1,7 @@
 package dmelechow.testtask.injection;
 
+import android.content.Context;
+
 import dagger.Module;
 import dagger.Provides;
 import dmelechow.testtask.interactor.ChatGeneratorInteractor;
@@ -10,8 +12,20 @@ import dmelechow.testtask.interactor.ChatGeneratorInteractor;
 
 @Module
 public class ChatGeneratorInteractorModule {
+
+    private Context context;
+
+    public ChatGeneratorInteractorModule(Context context) {
+        this.context = context;
+    }
+
     @Provides
-    ChatGeneratorInteractor provideInteractor() {
-        return new ChatGeneratorInteractor();
+    Context provideContext() {
+        return context;
+    }
+
+    @Provides
+    ChatGeneratorInteractor provideInteractor(Context context) {
+        return new ChatGeneratorInteractor(context);
     }
 }

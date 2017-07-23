@@ -29,9 +29,15 @@ public class MockEventHandler {
     private Subscription subscriptionTimer;
 
     public void onStop() {
-        subscriptionUpdateChat.unsubscribe();
-        subscriptionPing.unsubscribe();
-        subscriptionTimer.unsubscribe();
+        if (subscriptionUpdateChat != null) {
+            subscriptionUpdateChat.unsubscribe();
+        }
+        if (subscriptionPing != null) {
+            subscriptionPing.unsubscribe();
+        }
+        if (subscriptionTimer != null) {
+            subscriptionTimer.unsubscribe();
+        }
     }
 
     public void initHandlers() {
@@ -70,7 +76,7 @@ public class MockEventHandler {
 
     }
 
-    private void initTimer(){
+    private void initTimer() {
         subscriptionTimer = Observable.timer(PING_CHAT_DELAY, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

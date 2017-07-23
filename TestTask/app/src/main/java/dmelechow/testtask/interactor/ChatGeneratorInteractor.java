@@ -1,8 +1,11 @@
 package dmelechow.testtask.interactor;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Random;
 
+import dmelechow.testtask.R;
 import dmelechow.testtask.model.Chat;
 import dmelechow.testtask.model.Message;
 
@@ -13,10 +16,15 @@ import dmelechow.testtask.model.Message;
 public class ChatGeneratorInteractor {
 
     Random random = new Random();
+    private Context context;
+
+    public ChatGeneratorInteractor(Context context) {
+        this.context = context;
+    }
 
     public ArrayList<Chat> getChats() {
         ArrayList<Chat> chats = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 10; i++) {
             Message message = new Message(buildMessage(), random.nextBoolean(), buildDate());
             Chat chat = new Chat(buildName(), message, buildUrlIcon());
             chats.add(chat);
@@ -25,99 +33,23 @@ public class ChatGeneratorInteractor {
     }
 
     private String buildMessage() {
-        int numberMessage = random.nextInt(5);
-        switch (numberMessage) {
-            case 0: {
-                return "Привет, как дела? бла бла бла бла бла бла бла ";
-            }
-            case 1: {
-                return "Сегодня поеду домой";
-            }
-
-            case 2: {
-                return "Как твоё настроение?";
-            }
-
-            case 3: {
-                return "Крибли крабли бум";
-            }
-
-            default: {
-                return "Я не приду";
-            }
-        }
+        String[] message = context.getResources().getStringArray(R.array.array_message);
+        return message[random.nextInt(5)];
     }
 
     private String buildDate() {
-        int numberDate = random.nextInt(5);
-        switch (numberDate) {
-            case 0: {
-                return "Thu";
-            }
-            case 1: {
-                return "21.03.2017";
-            }
-
-            case 2: {
-                return "Today";
-            }
-
-            case 3: {
-                return "Sun";
-            }
-
-            default: {
-                return "22.05.2017";
-            }
-        }
+        String[] message = context.getResources().getStringArray(R.array.array_date);
+        return message[random.nextInt(5)];
     }
 
     private String buildName() {
-        int numberNameChat = random.nextInt(5);
-        switch (numberNameChat) {
-            case 0: {
-                return "Анастасия М.";
-            }
-            case 1: {
-                return "Олег Вульф";
-            }
-
-            case 2: {
-                return "Мама";
-            }
-
-            case 3: {
-                return "Брат";
-            }
-
-            default: {
-                return "Ремонт Холодильников";
-            }
-        }
+        String[] array = context.getResources().getStringArray(R.array.array_name);
+        return array[random.nextInt(10)];
     }
 
     private String buildUrlIcon() {
-        int iconAvaChat = random.nextInt(5);
-        switch (iconAvaChat) {
-            case 0: {
-                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx1qtutkE5iDvWk-8uWLAnGGXmw69r3xLfZQKaNdttnK80Ia8K";
-            }
-            case 1: {
-                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjcHiGu7ZXoGVPjMWSylOFB_rxJD8vbttM-HtCvHYvtpKoRUC-Q";
-            }
-
-            case 2: {
-                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6qgKbiRdQ7S_-aryW1DAG8s-h_WVSdEL9WmQX-fxDIeSW8xE6";
-            }
-
-            case 3: {
-                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsfZwBEeJsMhAVq4sQRr_33XsOx8qShqAvaWLYVJzKxvJa5m2yQ";
-            }
-
-            default: {
-                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyE294JmZeFTi99vy2n3JbMq-_KpRFDmP6iT1DifuAGsU5YT3t";
-            }
-        }
+        String[] array = context.getResources().getStringArray(R.array.array_url_icon);
+        return array[random.nextInt(5)];
     }
 
     public ArrayList<Chat> updateRandomChat(ArrayList<Chat> chats) {
